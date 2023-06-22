@@ -1,7 +1,10 @@
 const express = require("express");
 const ejsLayouts = require("express-ejs-layouts");
+const connectDB = require("./config/db");
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+connectDB();
 
 // Set view engine to ejs
 app.set("view engine", "ejs");

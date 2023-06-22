@@ -1,10 +1,27 @@
+/* Base */
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background-color: #000;
 }
 
+
+.container, .row {
+    position: relative;
+    z-index: 2;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar */
 .navbar {
     position: fixed;
     width: 100%;
@@ -13,8 +30,34 @@ body {
     margin-bottom: 20px;
 }
 
-.video-gallery {
+.navbar-nav {
+    justify-content: right;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
+.navbar .navbar-nav .nav-link {
+    color: #000;
+    text-shadow: 1px 1px 2px #fff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    padding: 0 0.9em;
+}
+
+/* Logo */
+#nameLogo {
+    position: absolute;
+    display: flex;
+    width: 600px;
+    height: 250px;
+    top: -350px;
+    left: 700px;
+}
+
+/* Video Gallery */
+.video-gallery {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -22,15 +65,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    background-image: url('/imgs/background2.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-color: rgba(255, 255, 255, 0.0);
-
-
-
+    background: url('/imgs/background2.png') no-repeat center / cover fixed;
 }
 
 .rotate-text {
@@ -39,47 +74,32 @@ body {
     text-align: right;
     font-size: 4rem;
     font-weight: 700;
-    font-family: 'Poppins', sans-serif;
     color: #ffffff;
-    margin: 0;
-    padding: 0;
     text-shadow: 1px 1px 2px #000;
-    -webkit-transform: rotate(180deg) translateX(100px);
-    -moz-transform: rotate(180deg) translateX(100px);
-    -ms-transform: rotate(180deg) translateX(100px);
-    -o-transform: rotate(180deg) translateX(100px);
 }
 
+/* Cards */
 .card {
     border: none;
     border-radius: 10px;
-    /* rounded corners */
     overflow: hidden;
-    /* necessary to respect border radius for img */
     box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-    /* shadow effect */
     transition: all 0.3s ease;
-    /* for hover effect */
 }
 
 .card:hover {
     transform: scale(1.03);
-    /* card enlarges a bit on hover */
     box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
-    /* shadow becomes more pronounced */
 }
 
 .card-img-top {
     width: 100%;
     height: 15vw;
-    /* this can be adjusted according to your design */
     object-fit: cover;
-    /* to maintain aspect ratio */
 }
 
 .card-body {
     background-color: #f8f9fa;
-    /* a light grey background */
     padding: 1.5rem;
 }
 
@@ -93,58 +113,19 @@ body {
 .card-text {
     font-size: 1rem;
     color: #666;
-    /* dark grey color for text */
 }
 
-#nameLogo {
-    position: absolute;
-    display: flex;
-    width: 600px;
-    height: 250px;
-    top: -350px;
-    left: 700px;
-
-    /* rotate: -30deg; */
-}
-
-/* .navbar-brand img {
-    height: 195px;
-    width: 750px;
-    margin-right: 0;
-    padding: 0 1em;
-} */
-
-.navbar-nav {
-    /* align-items: center; */
-    justify-content: right;
-    display: flex;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-
-}
-
-.navbar .navbar-nav .nav-link {
-    color: #000;
-    text-shadow: 1px 1px 2px #fff;
-    font-size: 1.4rem;
-    font-weight: 700;
-    padding: 0 0.9em;
-    font-family: 'Poppins', sans-serif;
-}
-
+/* Images */
 #about-image {
     border: 8px solid #ff00a2;
     transition: transform .2s;
-    /* Animation */
 }
 
 #about-image:hover {
     transform: scale(1.1);
-    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
-
+/* Typography */
 .title {
     font-size: 2.6rem;
     text-align: center;
@@ -154,6 +135,24 @@ body {
     font-size: 2.5rem;
 }
 
+.cursive {
+    font-family: 'Dawning of a New Day', cursive;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    font-weight: 900;
+    font-size: 1.9em;
+    letter-spacing: 5px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.text-center {
+    position: absolute;
+    right: -270px;
+    top: -100px;
+}
+
+/* Buttons */
 .btn {
     color: #000;
     font-size: 1.5rem;
@@ -178,58 +177,13 @@ body {
     transform: translateY(1px);
 }
 
-#registerBtn {
+#registerBtn, #loginBtn {
     background-color: #00ced1;
     border: none;
     color: #fff;
 }
 
-#registerBtn:hover {
+#registerBtn:hover, #loginBtn:hover {
     background-color: #fff;
-    /* inverting colors on hover */
     color: #00ced1;
-}
-
-#loginBtn {
-    background-color: #00ced1;
-    border: none;
-    color: #fff;
-}
-
-#loginBtn:hover {
-    background-color: #fff;
-    /* inverting colors on hover */
-    color: #00ced1;
-}
-
-
-
-.container,
-.row {
-    position: relative;
-    z-index: 2;
-}
-
-.cursive {
-    font-family: 'Dawning of a New Day', cursive;
-    color: #fff;
-    text-shadow: 1px 1px 2px #000;
-    font-weight: 900;
-    font-size: 1.9em;
-    letter-spacing: 5px;
-    padding: 10px;
-    border-radius: 10px;
-
-}
-
-
-.text-center {
-    position: absolute;
-    right: -270px;
-    top: -100px;
-}
-
-.row {
-    display: flex;
-    align-items: center;
 }
