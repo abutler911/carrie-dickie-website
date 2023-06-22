@@ -4,7 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Carrie Dickie</title>
+
+    <!-- SEO Meta Tags -->
+    <title>Carrie Dickie - Empowering, Motivating and Inspiring</title>
+    <meta
+      name="description"
+      content="Carrie Dickie is a dedicated entrepreneur who seeks to empower, motivate, and inspire others to achieve their own success."
+    />
+    <meta
+      name="keywords"
+      content="Carrie Dickie, Motivation, Empowerment, Inspiration, Entrepreneur"
+    />
+    <meta name="author" content="Andrew Butler" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    <meta
+      property="og:title"
+      content="Carrie Dickie - Empowering, Motivating and Inspiring"
+    />
+    <meta
+      property="og:description"
+      content="Carrie Dickie is a dedicated entrepreneur who seeks to empower, motivate, and inspire others to achieve their own success."
+    />
+    <meta property="og:image" content="#" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="#" />
+    <meta property="twitter:url" content="#" />
+    <meta
+      property="twitter:title"
+      content="Carrie Dickie - Empowering, Motivating and Inspiring"
+    />
+    <meta
+      property="twitter:description"
+      content="Carrie Dickie is a dedicated entrepreneur who seeks to empower, motivate, and inspire others to achieve their own success."
+    />
+    <meta property="twitter:image" content="#" />
+
+    <!-- Stylesheets and preconnects -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -14,94 +53,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dawning+of+a+New+Day&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Zeyada&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&family=Dawning+of+a+New+Day&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/css/main.css" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="/imgs/my-Carrie Dickie-pink.png" alt="" />
-          </a>
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link">Home</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link">About</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link">Publications</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link">Speaking</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link">Products</a>
-              </li>
-
-              <li class="nav-item">
-                <a class="nav-link">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <section
-      class="main vh-100 d-flex align-items-center justify-content-center"
-      style="
-        background-image: url(./imgs/landing-page.png);
-        background-size: cover;
-        background-position: center;
-        padding-top: 20px;
-      "
-    >
-      <div class="container">
-        <div class="row">
-          <div class="col-6"></div>
-          <div class="col-6 text-content">
-            <div class="text-center">
-              <h1 class="title">
-                Have <span class="cursive">Fun.</span> <br />Make
-                <span class="cursive">Money.</span> <br />Make a
-                <span class="cursive">Difference.</span>
-              </h1>
-
-              <button class="btn">Register</button>
-              <button class="btn">Login</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    <header><%- include('./partials/header') %></header>
+    <%- body %>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
+    <script type="module" src="js/main.js"></script>
   </body>
 </html>

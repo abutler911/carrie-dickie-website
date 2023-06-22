@@ -11,7 +11,25 @@ app.use(ejsLayouts);
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("layout");
+  res.render("index");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about");
+});
+
+app.get("/stageandspotlight", (req, res) => {
+  const videos = [
+    { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
+    { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
+    { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
+    { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
+    { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
+    { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
+    { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
+    { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
+  ];
+  res.render("stageAndSpotlight", { videos: videos });
 });
 
 app.listen(PORT, () => {

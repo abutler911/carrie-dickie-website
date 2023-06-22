@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 .navbar {
@@ -12,26 +13,141 @@ body {
     margin-bottom: 20px;
 }
 
-.navbar-brand img {
-    height: 65px;
-    width: 390px;
-    margin-right: 0;
-    padding: 0 1em;
+.video-gallery {
+
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    background-image: url('/imgs/background2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(255, 255, 255, 0.0);
+
+
+
 }
 
+.rotate-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg) translateX(100px);
+    text-align: right;
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    text-shadow: 1px 1px 2px #000;
+    -webkit-transform: rotate(180deg) translateX(100px);
+    -moz-transform: rotate(180deg) translateX(100px);
+    -ms-transform: rotate(180deg) translateX(100px);
+    -o-transform: rotate(180deg) translateX(100px);
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    /* rounded corners */
+    overflow: hidden;
+    /* necessary to respect border radius for img */
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+    /* shadow effect */
+    transition: all 0.3s ease;
+    /* for hover effect */
+}
+
+.card:hover {
+    transform: scale(1.03);
+    /* card enlarges a bit on hover */
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+    /* shadow becomes more pronounced */
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    /* this can be adjusted according to your design */
+    object-fit: cover;
+    /* to maintain aspect ratio */
+}
+
+.card-body {
+    background-color: #f8f9fa;
+    /* a light grey background */
+    padding: 1.5rem;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    /* dark grey color for text */
+}
+
+#nameLogo {
+    position: absolute;
+    display: flex;
+    width: 600px;
+    height: 250px;
+    top: -350px;
+    left: 700px;
+
+    /* rotate: -30deg; */
+}
+
+/* .navbar-brand img {
+    height: 195px;
+    width: 750px;
+    margin-right: 0;
+    padding: 0 1em;
+} */
+
 .navbar-nav {
-    align-items: center;
+    /* align-items: center; */
+    justify-content: right;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
 }
 
 .navbar .navbar-nav .nav-link {
-    color: #fff;
-    font-size: 1.3em;
+    color: #000;
+    text-shadow: 1px 1px 2px #fff;
+    font-size: 1.4rem;
     font-weight: 700;
-    padding: 0 1em;
+    padding: 0 0.9em;
+    font-family: 'Poppins', sans-serif;
 }
+
+#about-image {
+    border: 8px solid #ff00a2;
+    transition: transform .2s;
+    /* Animation */
+}
+
+#about-image:hover {
+    transform: scale(1.1);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 
 .title {
     font-size: 2.6rem;
+    text-align: center;
 }
 
 .subtitle {
@@ -39,33 +155,54 @@ body {
 }
 
 .btn {
-    background-color: #ccccff;
     color: #000;
     font-size: 1.5rem;
     font-weight: 700;
-    width: 130px;
-    padding: 5px;
-    margin-top: 10px;
+    width: 150px;
+    padding: 10px;
+    margin-top: 40px;
     margin-right: 15px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 50px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
-.main {
-    position: relative;
-    background-color: #CB1C8D;
-    height: 80vh;
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 15px;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+#registerBtn {
+    background-color: #00ced1;
+    border: none;
+    color: #fff;
+}
+
+#registerBtn:hover {
+    background-color: #fff;
+    /* inverting colors on hover */
+    color: #00ced1;
+}
+
+#loginBtn {
+    background-color: #00ced1;
+    border: none;
+    color: #fff;
+}
+
+#loginBtn:hover {
+    background-color: #fff;
+    /* inverting colors on hover */
+    color: #00ced1;
 }
 
 
-.main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
 
 .container,
 .row {
@@ -74,18 +211,22 @@ body {
 }
 
 .cursive {
-    font-family: 'Zeyada', cursive;
-    color: white;
+    font-family: 'Dawning of a New Day', cursive;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
     font-weight: 900;
-    font-size: 1.6em;
+    font-size: 1.9em;
+    letter-spacing: 5px;
+    padding: 10px;
+    border-radius: 10px;
 
 }
 
+
 .text-center {
     position: absolute;
-    right: -110px;
-    top: -200px;
-    /* adjust this value to your liking */
+    right: -270px;
+    top: -100px;
 }
 
 .row {
