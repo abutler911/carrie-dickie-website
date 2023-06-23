@@ -14,11 +14,11 @@ app.use(ejsLayouts);
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { pageTitle: "Home" });
 });
 
 app.get("/about", (req, res) => {
-  res.render("about");
+  res.render("about", { pageTitle: "About" });
 });
 
 app.get("/stageandspotlight", (req, res) => {
@@ -32,7 +32,10 @@ app.get("/stageandspotlight", (req, res) => {
     { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
     { thumbnail: "/imgs/carrie4.jpg", url: "/path/to/video1.mp4" },
   ];
-  res.render("stageAndSpotlight", { videos: videos });
+  res.render("stageAndSpotlight", {
+    videos: videos,
+    pageTitle: "Stage and Spotlight",
+  });
 });
 
 app.listen(PORT, () => {
