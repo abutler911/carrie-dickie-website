@@ -68,17 +68,23 @@ app.get("/", (req, res) => {
 
 app.post("/register", (req, res) => {
   let { firstname, lastname, username, email, password } = req.body;
-  let user = new User({ firstname, lastname, username, email, password });
-  user
-    .save()
-    .then((user) => {
-      return res.redirect("/");
-    })
-    .catch((err) => {
-      console.log(err);
-      return res.status(500).send("Error registering user");
-    });
+  bcrypt.hash(password, 10, function(err, hashedPass) {
+    if(err) {
+      return res.status(500).send("Error hashing password");
+    }
+    let user = new User({ firstname, lastname, username, email, password: hashedPass });
+    user
+      .save()
+      .then((user) => {
+        return res.redirect("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        return res.status(500).send("Error registering user");
+      });
+  });
 });
+
 
 
 app.get("/register", (req, res) => {
