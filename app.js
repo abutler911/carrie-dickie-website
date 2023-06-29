@@ -1,11 +1,14 @@
 const express = require("express");
 const ejsLayouts = require("express-ejs-layouts");
 const connectDB = require("./config/db");
-const passport = require(passport);
+const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const session = require("express-session");
 const bcrypt = require("bcryptjs");
 const User = require("./models/User");
+const bodyParser= require('body-parser');
+
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -21,9 +24,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 app.use(express.static("public"));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(
   session({
-    secret: "secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
   })
@@ -61,16 +67,22 @@ app.get("/", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  let { username, password } = req.body;
-  let user = new User({ username, password });
+  let { firstname, lastname, username, email, password } = req.body;
+  let user = new User({ firstname, lastname, username, email, password });
   user
     .save()
     .then((user) => {
       return res.redirect("/");
     })
     .catch((err) => {
-      return res.send("Error registering user");
+      console.log(err);
+      return res.status(500).send("Error registering user");
     });
+});
+
+
+app.get("/register", (req, res) => {
+  res.render("register", { pageTitle: "Register" });
 });
 
 app.get("/about", (req, res) => {
