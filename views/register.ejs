@@ -1,64 +1,77 @@
-<section
-  class="register vh-100 d-flex align-items-center justify-content-center"
->
+<section class="register vh-100 d-flex">
   <div class="container">
-    <div class="row justify-content-center">
+    <div class="row">
       <div class="col-lg-6">
-        <div class="form-container bg-white rounded px-5 py-5">
-          <h1 class="text-center mb-5">Register</h1>
+        <h1 class="rotate-text">Register</h1>
+      </div>
+      <div class="col-lg-6">
+        <div class="form-container rounded px-5 py-5 shadow-lg">
           <form action="/register" method="post">
             <div class="form-group">
-              <label for="firstName">First Name:</label>
+              <label for="firstName" style="font-weight: bold"
+                >First Name:</label
+              >
               <input
                 type="text"
                 id="firstName"
                 name="firstname"
                 class="form-control"
+                placeholder="Enter your first name"
                 required
               />
             </div>
             <div class="form-group">
-              <label for="lastName">Last Name:</label>
+              <label for="lastName" style="font-weight: bold">Last Name:</label>
               <input
                 type="text"
                 id="lastName"
                 name="lastname"
                 class="form-control"
+                placeholder="Enter your last name"
                 required
               />
             </div>
             <div class="form-group">
-              <label for="username">Username:</label>
+              <label for="username" style="font-weight: bold">Username:</label>
               <input
                 type="text"
                 id="username"
                 name="username"
                 class="form-control"
+                placeholder="Choose a username"
                 required
               />
             </div>
             <div class="form-group">
-              <label for="email">Email:</label>
+              <label for="email" style="font-weight: bold">Email:</label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 class="form-control"
+                placeholder="Enter your email"
                 required
               />
             </div>
             <div class="form-group">
-              <label for="password">Password:</label>
+              <label for="password" style="font-weight: bold">Password:</label>
               <input
                 type="password"
                 id="password"
                 name="password"
                 class="form-control"
+                placeholder="Enter your password"
                 required
               />
             </div>
-            <div class="text-center mt-5">
-              <button type="submit" class="btn w-100">Register</button>
+            <div class="mt-5">
+              <button
+                type="submit"
+                class="btn w-100"
+                style="padding: 15px 0; font-size: 18px"
+              >
+                Register
+              </button>
             </div>
           </form>
         </div>
